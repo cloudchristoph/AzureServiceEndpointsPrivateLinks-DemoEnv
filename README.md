@@ -15,6 +15,9 @@ This repository contains the Demo Environemnt code of the Deep Dive into Azure S
 
 ### Deploy
 
+> [!WARNING]
+> This will deploy quite a few resources into your Azure Subscription that incur costs (Azure Firewall Standard, Virtual Network Gateway, 3 VMs, 3 SQL Severs). Make sure to delete the resources after you are done with the demo!
+
 1. Clone or download this repository
 2. Create a parameters file based on the example file under `/BaseInfra/BaseInfra.example.bicepparams`
 3. _Choose:_
@@ -30,10 +33,10 @@ This repository contains the Demo Environemnt code of the Deep Dive into Azure S
             -Verbose
         ```
 
-   2. Deploy as normal Bicep templates:
+   2. Deploy as normal Bicep templates (Azure PowerShell)):
 
         ```powershell
-            New-AzDeployment ``
+            New-AzDeployment `
                 -Location 'westeurope' `
                 -TemplateFile './BaseInfra/BaseInfra.bicep' `
                 -TemplateParameterFile './BaseInfra/BaseInfra.bicepparam'`
@@ -51,7 +54,7 @@ This repository contains the Demo Environemnt code of the Deep Dive into Azure S
             -Verbose
         ```
 
-   2. If you have deployed as normal Bicep templates, than delete the resource groups created by the deployment
+   2. If you have deployed as normal Bicep templates, than delete the resource groups created by the deployment manually.
 
 ## Questions
 
